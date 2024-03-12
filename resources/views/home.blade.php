@@ -1,12 +1,16 @@
 @extends('templates.main')
 
 @section('title', 'Home')
+
+@section('cdns')
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css' integrity='sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==' crossorigin='anonymous'/>
+@endsection
     
 @section('main-content')
 
    @if (isset($trains))
     <h3 class="my-4">The trains leaving today are: </h3>
-        <table class="table table-hover">
+        <table class="table table-hover table-dark">
         <thead>
             <tr>
             <th scope="col">Train code</th>
@@ -26,7 +30,7 @@
       <td>{{$train->getTrainCode()}}</td>
       <td>{{$train->departure_station}}</td>
       <td>{{$train->arrival_station}}</td>
-      <td>{{$train->getDepartureTime()}} -> {{$train->getArrivalTime()}}</td>
+      <td>{{$train->getDepartureTime()}} <i class="fa-solid fa-arrow-right"></i> {{$train->getArrivalTime()}}</td>
       <td>{{$train->getDate()}}</td>
     </tr>
     
