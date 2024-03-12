@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('arrival_station', 100);
             $table->time('departure_time');
             $table->time('arrival_time');
+            $table->date('departure_date');
             $table->smallInteger('train_code')->unsigned()->unique();
             $table->tinyInteger('carriages_number')->unsigned();
             $table->boolean('is_delayed')->default(0);

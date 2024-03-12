@@ -13,7 +13,7 @@
     {{-- header --}}
     @include('includes.header')
     {{-- main --}}
-    <div class="container">
+    <div class="container my-5">
         @yield('main-content')
     </div>
 
