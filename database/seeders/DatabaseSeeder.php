@@ -13,6 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\Train::factory(10)->create();
 
-        
+        $this->call([TrainSeeder::class]);
     }
 }
