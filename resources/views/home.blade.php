@@ -23,11 +23,11 @@
     @forelse ($trains as $train)
     
     <tr>
-      <td>FN {{$train['train_code']}}</td>
-      <td>{{$train['departure_station']}}</td>
-      <td>{{$train['arrival_station']}}</td>
-      <td>{{$train['departure_time']}} -> {{$train['arrival_time']}}</td>
-      <td>{{$train['departure_date']}}</td>
+      <td>{{$train->getTrainCode()}}</td>
+      <td>{{$train->departure_station}}</td>
+      <td>{{$train->arrival_station}}</td>
+      <td>{{$train->getDepartureTime()}} -> {{$train->getArrivalTime()}}</td>
+      <td>{{$train->getDate()}}</td>
     </tr>
     
     @empty
