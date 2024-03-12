@@ -10,10 +10,10 @@
           <a class="nav-link @if (Route::is('home')) active @endif" aria-current="page" href="{{route('home')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Treni</a>
+          <a class="nav-link" href="#">Trains</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Prezzi</a>
+          <a class="nav-link" href="#">Pricing</a>
         </li>
       </ul>
     </div>
