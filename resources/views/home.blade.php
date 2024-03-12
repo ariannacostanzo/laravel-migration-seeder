@@ -8,22 +8,23 @@
     
 @section('main-content')
 
-   @if (isset($trains))
-    <h3 class="my-4">The trains leaving today are: </h3>
+{{-- Tutta la logica avviene solo se ho istanziato trains --}}
+@isset($trains)
+    {{-- questo lo mostro solo se ho qualche records --}}
+   @if (count($trains) > 1)
+    <h3 class="my-4">The trains leaving from today on are: </h3>
         <table class="table table-hover table-dark">
         <thead>
             <tr>
             <th scope="col">Train code</th>
             <th scope="col">Departure Station</th>
             <th scope="col">Arrival Station</th>
-            <th scope="col">Departure/Arrival</th>
+            <th scope="col">Departure/Arrival time</th>
             <th scope="col">Departure Date</th>
             </tr>
         </thead>
         <tbody>
-    
-    
-    
+    {{-- itero su trains --}}
     @forelse ($trains as $train)
     
     <tr>
@@ -34,13 +35,16 @@
       <td>{{$train->getDate()}}</td>
     </tr>
     
+    {{-- Se non ho records mostro questo messaggio senza tabella --}}
     @empty
     <h4>There are no trains leaving today</h4>
     @endforelse
 
     </tbody>
 </table>
+@endif
+{{-- se non ho la variabile trains mostro questo --}}
 @else
 <h3>No train available</h3>
-@endif
+@endisset
 @endsection
