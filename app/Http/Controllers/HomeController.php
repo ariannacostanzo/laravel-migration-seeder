@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         // $trains = Train::all();
         //prendo solo i treni che partono oggi
-        $trains = Train::where('departure_date', '=', '2024-03-12')->get();
+        $trains = Train::where('departure_date', '>=', '2024-03-12')->get();
         return view('home', compact('trains'));
     }
    
